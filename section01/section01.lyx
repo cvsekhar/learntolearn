@@ -1,0 +1,273 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #1
+\end_layout
+
+\begin_layout Author
+Vijay Chennupati, standonopenstds@gmail.com
+\end_layout
+
+\begin_layout Part*
+Summary
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+Machine learning techniques can automatically detect patterns in the underlying
+ data and use them to make predictions on unseen data.
+ In traditional machine learning, we handpick the features based on domain
+ knowledge to train the models.
+ Deep learning is one of the more popular ways to solve machine learning
+ problems.
+ Deep learning models are deep in that they have a large number of layers;
+ these models are capable of addressing low-level perceptual data[2].
+\end_layout
+
+\begin_layout Standard
+Every machine learning problem has the following key components[2]: 
+\end_layout
+
+\begin_layout Itemize
+Data - A collection of examples we can learn from 
+\end_layout
+
+\begin_layout Itemize
+Model - The function that transforms the input to output 
+\end_layout
+
+\begin_layout Itemize
+Loss function - A loss function that determines how good our model is 
+\end_layout
+
+\begin_layout Itemize
+Optimization Algorithms - A algorithm to fine-tune the model parameters
+ to minimize the loss
+\end_layout
+
+\begin_layout Standard
+Types of machine learning [2],[4]: Machine learning is usually divided into
+ three main types.
+ 
+\end_layout
+
+\begin_layout Itemize
+Supervised learning: the goal is to learn the best mapping out of several
+ available mappings from input to output given a set of input-output pairs.
+ Regression is learning the mapping from input to output; in this case,
+ the output is a nominal value.
+ Classification is also learning from input to output; in this case, the
+ output is a categorical value or the number of classes.
+ If the number of classes is two, then it is called binary classification.
+ If the number of classes is more than two and the classes are mutually
+ exclusive, it is called multiclass classification.
+ When the classes are not mutually exclusive, then we call it a multi-label
+ classification.
+ 
+\end_layout
+
+\begin_layout Itemize
+Unsupervised Learning: In Unsupervised learning, we are just given the data.
+ We can form clusters on the data to form groups.
+ We can discover latent features by doing principal component analysis.
+ GANs can help augment data from existing data by adding new data when the
+ data is sparse.
+ 
+\end_layout
+
+\begin_layout Itemize
+Reinforcement Learning: Supervised and Unsupervised learning is done in
+ an offline fashion, where we don't interact with any environment.
+ We get lots of input data, train on the data, and make predictions on new
+ data.
+ But when we need to take some action instead of just predicting, then we
+ need reinforcement learning.
+ In reinforcement learning, the agent interacts with an environment in timesteps.
+ At each timestep, we are given observations from the environment, and we
+ need to choose the best action.
+ This action is sent back to the environment through actuators in the case
+ of robots.
+ The environment provides feedback in the form of rewards.
+ This reward is either positive or negative.
+ The goal of reinforcement learning is to come up with an optimal policy
+ based on the rewards.
+\end_layout
+
+\begin_layout Standard
+Road to Deep Learning [2]: 
+\end_layout
+
+\begin_layout Standard
+The main highlights of deep learning like multiperceptron, convolutional
+ neural networks, long short term memory, and reinforcement learning are
+ rediscovered in the last decade due to the availability of large amounts
+ of data and cheap computing based on GPUs.
+ There are many novel approaches in deep learning like dropout, which address
+ the vanishing gradient problem.
+ The attention mechanism helped increase the memory and complexity of a
+ system while keeping the learnable parameters constant.
+ GANs helped in creating arbitrary data.
+ The advances in parallel computing algorithms also helped in advancing
+ reinforcement learning by simulating or creating synthetic data.
+ Deep learning frameworks also played a very crucial role in getting ideas
+ from research to mainstream industries.
+\end_layout
+
+\begin_layout Part*
+Exercise Answers
+\end_layout
+
+\begin_layout Enumerate
+We have a recommender system that recommends the best available meeting
+ slots.
+ The system uses a rule-based algorithm to select the best possible slots
+ for meetings.
+ The main problem with this approach is it doesn't take into account the
+ current action taken after suggesting slot whether the meeting slot is
+ accepted or canceled.
+ A reinforcement learning approach considers past actions like whether a
+ recommended slot is selected or canceled into its algorithm and suggest
+ better meeting slots.
+ 
+\end_layout
+
+\begin_layout Enumerate
+The problem is a lot with IoT devices; for example, I have a humidity and
+ water detection system that records the activity every 30 min.
+ They collect a lot of data and precisely don't recommend doing anything
+ with the humidity or water detection system.
+ It just merely alerts there is high humidity, or it detected water.
+ We can develop a proper end to end deep learning models with the collected
+ data and add additional external disturbances like outside weather to suggest
+ some recommendations.
+ 
+\end_layout
+
+\begin_layout Enumerate
+In traditional learning algorithms, we create models by training handcrafted
+ features from data to make a prediction.
+ With the advance in computing power and the availability of more data,
+ the deep learning algorithm can master some complex tasks by learning the
+ low-level perceptual data.
+ The data acts as a fuel to the algorithms to improve their performance
+ on a particular task.
+ In particular, the algorithms are like steam engines that used coal as
+ fuel to allow for deeper mines and higher coal production and run machinery
+ anywhere [3] 
+\end_layout
+
+\begin_layout Enumerate
+One example where we can apply or agument by using end to end deep learning
+ is econometrics.
+ In econometrics, we try to find the causal relationships between variables.
+ For example, we can use deep learning to convert images from unstructured
+ data to structured data and used as input to econometric models to study
+ the economic meaning of those features combined with other data [1].
+\end_layout
+
+\begin_layout Section*
+References
+\end_layout
+
+\begin_layout Enumerate
+Eric Zheng, Yong Tan, Paulo Goes, Ramnath Chellappa, D.J.
+ Wu, Michael Shaw, Olivia Sheng, and Alok Gupta, 2017, https://doi.org/10.1515/dim
+-2017-0012
+\end_layout
+
+\begin_layout Enumerate
+Aston Zhang, Zack C.
+ Lipton, Mu Li, and Alex J.
+ Smol, 2020, Dive into Deep Learning, https://d2l.ai/chapter_introduction/index.ht
+ml# 
+\end_layout
+
+\begin_layout Enumerate
+https://en.wikipedia.org/wiki/Steam_locomotive
+\end_layout
+
+\begin_layout Enumerate
+https://en.wikipedia.org/wiki/Steam_locomotive Kevin Murphy, 2012, Machine
+ Learning, A probabilistic perspective
+\end_layout
+
+\end_body
+\end_document
